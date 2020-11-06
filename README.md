@@ -15,6 +15,11 @@ npm run serve
 npm run build
 ```
 
+### Deploys on the website
+```
+firebase deploy
+```
+
 ### Lints and fixes files
 ```
 npm run lint
