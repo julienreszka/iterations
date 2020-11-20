@@ -1,14 +1,26 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
+// import NewVersion from '../views/NewVersion.vue'
 
 Vue.use(VueRouter)
+
+function loadView(
+  view
+) {
+  return () => import(/* webpackChunkName: "view-[request]" */ `@/views/${view}.vue`)
+}
 
 const routes = [
   {
     path: '/',
     name: 'Home',
     component: Home
+  },
+  {
+    path: '/newversion',
+    name: 'NewVersion',
+    component: loadView('NewVersion')
   },
   {
     path: '/about',
